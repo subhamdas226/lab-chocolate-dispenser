@@ -113,14 +113,10 @@ function sortChocolateBasedOnCount(chocolates)
 
 //Progression 7: Change ___ chocolates of ____ color to ____ color
 function changeChocolateColor(chocolates, count, currentColor, finalColor)
-{
-    if(currentColor == finalColor){
-        return "Can't replace the same chocolates";
-    }
-    
-    else if(count>0)
+{ 
+    if(count > 0)
     {
-        for(var i = chocolates.length;i>=0;i--)
+        for(let i = chocolates.length; i >= 0;i--)
         {
             if(chocolates[i]==currentColor)
             {
@@ -128,22 +124,14 @@ function changeChocolateColor(chocolates, count, currentColor, finalColor)
             }
         }
     return chocolates;
-    }
-    else{
-        return "Number cannot be zero/negative";
-    }
-    
+    } 
 }
 
 //Progression 8: Change all chocolates of ____ color to ____ color and return [countOfChangedColor, chocolates]
 
-function changeChocolateColorAllOfxCount(chocolates, currentColor, finalColor)
+function changeChocolateColorAllOfxCount(currentColor, finalColor)
 {
-    if(currentColor == finalColor)
-    {
-        return "Can't replace the same chocolates";
-    }
-    else
+    if(currentColor !== finalColor)
     {
         for(var i = chocolates.length;i>=0;i--)
     {
@@ -152,8 +140,8 @@ function changeChocolateColorAllOfxCount(chocolates, currentColor, finalColor)
             chocolates[i] = finalColor;
         }
     }
-    var out = [chocolates.length,chocolates];
-    return out;
+    var count_color_change_choco = [chocolates.length,chocolates];
+    return count_color_change_choco;
     }
 }
 //Challenge 1: Remove one chocolate of ____ color from the top
