@@ -88,17 +88,7 @@ function sortChocolateBasedOnCount(chocolates)
     var hash = [];
     for (let i = 0; i < col.length; i++)
         hash[col[i]] = counts[i];
-
-    console.log(hash);
-    /*var h = hash.sort(function(a, b){
-        return a.counts-b.counts;
-    })*/
-    for (var key in hash) {
-        if (hash.hasOwnProperty(key)) {
-            console.log(key + " -> " + hash[key]);
-        }
-    }
-    //console.log(h);
+    
     var sortable = [];
     for (var color in hash) {
         sortable.push([color, hash[color]]);
